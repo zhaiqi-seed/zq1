@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block mainbody2 %}
+    {% load static %}
+    <script src="{% static 'js/udpateteacher.js' %}"></script>
+    <fieldset class="layui-elem-field layui-field-title layui-border-cyan">
+        <legend>修改师傅信息</legend>
+        <div class="layui-field-box">
+            <div class="layui-row">
+                <div class="layui-col-md11">&nbsp;</div>
+                <div class="layui-col-md1">
+                    <button type="button" onclick="updateFSubmit()"
+                            class="layui-btn layui-btn-normal layui-btn-xs">提交</button>
+                    <a href="{% url 'testModel:teacherList' %}"
+                       class="layui-btn layui-btn-normal layui-btn-xs">返回</a>
+                </div>
+            </div>
+            <br>
+            <div class="layui-row">&nbsp;
+                <form id='updateF' class="layui-form" action="/testModel/updateTeacher/" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span class="layui-badge-dot"></span> 名字：</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="name" class="layui-input" placeholder="请输入名字"
+                                   value="{{ teacher.name }}"/>
+                            <input type="hidden" name="pk" value="{{ teacher.pk }}"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span class="layui-badge-dot"></span> 年龄：</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="age" class="layui-input" placeholder="请输入年龄"
+                                   value="{{ teacher.age }}"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span class="layui-badge-dot"></span> 密码：</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="password" class="layui-input" placeholder="请输入密码"
+                                   value="{{ teacher.password }}"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </fieldset>
+{% endblock mainbody2 %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block mainbody1 %}
+   <ul>
+       {% for n in demoList %}
+            <li>
+                <a href="{{ n.demoUrl }}">{{ n.demoName }}</a>
+            </li>
+        {% endfor %}
+   </ul>
+{% endblock mainbody1 %}
+
+{% block mainbody2 %}
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.4.1/css/bootstrap.css">
+    <script src="/statics/plugins/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
+    <table>
+        <th>ID</th><th>名字</th>
+        {% for n in dblist %}
+            <tr>
+                <td>{{ n.id }}</td><td>{{ n.name }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock mainbody2 %}

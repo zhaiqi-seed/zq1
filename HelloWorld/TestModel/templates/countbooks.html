@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block mainbody2 %}
+    <fieldset class="layui-elem-field  layui-border-cyan">
+        <legend>统计信息</legend>
+        <div class="layui-row">
+            <div class="layui-col-md4" align="right">一共有多少本书：</div>
+            <div class="layui-col-md4" align="left">{{ bookcount }}</div>
+            <div class="layui-col-md4"></div>
+        </div>
+        <div class="layui-row">
+            <div class="layui-col-md4" align="right">一共有几人订阅书：</div>
+            <div class="layui-col-md4" align="left">{{ peoplecount }}</div>
+            <div class="layui-col-md4"></div>
+        </div>
+        <br/>
+        <div class="layui-row">
+            <div class="layui-col-md4" align="right">书本订阅情况：</div>
+            <div class="layui-col-md4" align="center">
+                <table class="layui-table">
+                    <colgroup>
+                        <col height="40px"><col align="right">
+                    </colgroup>
+                    <thead>
+                        <th>书名</th><th style="text-align:right">订阅数</th>
+                    </thead>
+                    <tbody>
+                    {% for i in bookOrderCount %}
+                        <tr>
+                            <td>{{ i.bookName }}</td><td align="right">{{ i.c }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="layui-col-md4"></div>
+        </div>
+    </fieldset>
+{% endblock mainbody2 %}
