@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% load static %}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>测试 - layui</title>
+        <link rel="stylesheet" href="{% static "js/layui/css/layui.css" %}">
+        <script src="{% static "js/JQuery.js" %}"></script>
+        <script src="{% static "js/layui/layui.js" %}"></script>
+        <script src="{% static "js/base.js" %}"></script>
+    </head>
+    <body style="background-image: url({% static 'images/bg.jpg' %});">
+        <div class="layui-fluid">
+            <div class="layui-row">
+                <div class="layui-col-md11">
+                    Django试验框架
+                </div>
+                <div class="layui-col-md1" align="right">
+                    <a href="/login/" class="layui-btn layui-btn-normal layui-btn-xs">退出</a>
+                </div>
+            </div>
+            <hr class="layui-border-black">
+            <div class="layui-row layui-ro">
+                <div class="layui-col-md2">
+                    <form id="urlForm" method="get"></form>
+                    <div id="test1"></div>
+                </div>
+                <div class="layui-col-md10">
+                    {% block mainbody2 %}
+                        <p>首页</p>
+                    {% endblock mainbody2 %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
